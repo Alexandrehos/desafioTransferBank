@@ -1,6 +1,5 @@
 <template>
   <h1>Novo pagamento</h1>
-  <ConfirmacaoDePagamentoModal />
   <div class="d-flex column mt-3">
     <div class="col-8">
       <InfosNovoPagamento />

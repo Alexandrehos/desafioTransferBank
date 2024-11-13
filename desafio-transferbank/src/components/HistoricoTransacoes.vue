@@ -2,10 +2,10 @@
   <div>
     <ul class="list-group list-group-flush">
       <li
-        v-for="transaction in transactions"
+        v-for="transaction in lastTransactions"
         class="list-group-item bg-light p-0 my-1"
       >
-        <Transacao />
+        <Transacao :transaction="transaction" />
       </li>
     </ul>
   </div>
@@ -22,13 +22,22 @@
 <script>
 import { ref } from "vue";
 import Transacao from "./Transacao.vue";
+import { useTransactionsHistory } from "../stores/TransactionsHistory";
 
 export default {
   name: "HistoricoTransacoes",
   components: { Transacao },
   setup() {
-    let transactions = ref([1, 2, 3]);
-    return { transactions };
+    const transactionsHistory = useTransactionsHistory();
+    const lastTransactions = ref([]);
+
+    transactionsHistory.getHistory();
+
+    transactionsHistory.$subscribe((history) => {
+      lastTransactions.value = transactionsHistory.history.slice(-3).reverse();
+    });
+
+    return { lastTransactions, transactionsHistory };
   },
 };
 </script>

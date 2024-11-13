@@ -164,6 +164,8 @@ export default {
           dolarVETValue: transactionInfo.dolarVETValue,
           finalOrderValue: valueAmount.value,
           finalOrderValueClient: transactionInfo.transactionValueFinal,
+          type: "Pix",
+          flow: "Inbound",
         });
       }
     };
@@ -182,6 +184,16 @@ export default {
         finalOrderValueClient: "",
       });
     };
+
+    transaction.$subscribe((orderPaymentConfirmation) => {
+      console.log("Achou");
+      if (transaction.orderPaymentConfirmation) {
+        console.log("Achou verdades");
+        cancelChargeProccess();
+        valueAmount.value = 0;
+        transaction.resetOrderConfirmation();
+      }
+    });
 
     return {
       cpfInput,

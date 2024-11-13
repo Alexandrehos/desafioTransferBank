@@ -9,7 +9,10 @@
         />
       </div>
       <div class="ms-2">
-        <div class="fw-bold value">USD 1.000,00</div>
+        <div class="fw-bold value">
+          $
+          {{ (Math.round(transaction.finalOrderValue * 100) / 100).toFixed(2) }}
+        </div>
         <div class="type">Transferência pix</div>
       </div>
     </div>
@@ -23,6 +26,7 @@
 <script>
 export default {
   name: "Transacao",
+  props: ["transaction"],
 };
 </script>
 

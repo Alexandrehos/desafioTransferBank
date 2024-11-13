@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useTransactionsHistory } from "./TransactionsHistory";
 
 export const useTransaction = defineStore("transactionStore", {
   state: () => ({
@@ -11,6 +12,9 @@ export const useTransaction = defineStore("transactionStore", {
     finalOrderValue: "",
     finalOrderValueClient: "",
     orderPaymentConfirmation: false,
+    type: "",
+    flow: "",
+    status: "",
   }),
   getters: {
     getState() {
@@ -25,6 +29,9 @@ export const useTransaction = defineStore("transactionStore", {
         dolarVETValue: this.dolarVETValue,
         finalOrderValue: this.finalOrderValue,
         finalOrderValueClient: this.finalOrderValueClient,
+        type: this.type,
+        flow: this.flow,
+        status: "Ok",
       };
     },
   },
@@ -38,18 +45,25 @@ export const useTransaction = defineStore("transactionStore", {
       this.dolarVETValue = transactionData.dolarVETValue;
       this.finalOrderValue = transactionData.finalOrderValue;
       this.finalOrderValueClient = transactionData.finalOrderValueClient;
+      this.flow = transactionData.flow;
+      this.status = transactionData.status;
     },
     async confirmPayment() {
+      const transactionsHistory = useTransactionsHistory();
       try {
         const res = await fetch(`http://localhost:3000/accountTransactions`, {
           method: "POST",
           body: JSON.stringify(this.getTransactionData),
           headers: { "Content-Type": "application/json" },
         });
+        transactionsHistory.getHistory();
         this.orderPaymentConfirmation = true;
       } catch (e) {
         console.log(e);
       }
+    },
+    resetOrderConfirmation() {
+      this.orderPaymentConfirmation = false;
     },
   },
 });

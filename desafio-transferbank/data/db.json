@@ -77,6 +77,65 @@
       "dolarVETValue": 5.8110892,
       "finalOrderValue": "15",
       "finalOrderValueClient": 145.27722999999997
+    },
+    {
+      "id": "a210",
+      "clientName": "Alan da Silva Golçalves",
+      "clientCPF": "08182227941",
+      "clientPhone": "5541995988760",
+      "dolarValue": "5.7490",
+      "dolarVETValue": 5.8110892,
+      "finalOrderValue": "250",
+      "finalOrderValueClient": 1510.8831919999998
+    },
+    {
+      "id": "7e42",
+      "clientName": "Alan da Silva Golçalves",
+      "clientCPF": "08182227941",
+      "clientPhone": "5541995988760",
+      "dolarValue": "5.7490",
+      "dolarVETValue": 5.8110892,
+      "finalOrderValue": "110",
+      "finalOrderValueClient": 697.330704
+    },
+    {
+      "id": "a33e",
+      "clientName": "Alan da Silva Golçalves",
+      "clientCPF": "08182227941",
+      "clientPhone": "5541995988760",
+      "dolarValue": "5.7490",
+      "dolarVETValue": 5.8110892,
+      "finalOrderValue": "100",
+      "finalOrderValueClient": 639.219812,
+      "type": "",
+      "flow": "Inbound",
+      "status": "Ok"
+    },
+    {
+      "id": "da26",
+      "clientName": "Alan da Silva Golçalves",
+      "clientCPF": "08182227941",
+      "clientPhone": "5541995988760",
+      "dolarValue": "5.7490",
+      "dolarVETValue": 5.8110892,
+      "finalOrderValue": "330",
+      "finalOrderValueClient": 1975.7703279999998,
+      "type": "",
+      "flow": "Inbound",
+      "status": "Ok"
+    },
+    {
+      "id": "934a",
+      "clientName": "Alan da Silva Golçalves",
+      "clientCPF": "08182227941",
+      "clientPhone": "5541995988760",
+      "dolarValue": "5.7490",
+      "dolarVETValue": 5.8110892,
+      "finalOrderValue": "560",
+      "finalOrderValueClient": 3312.320844,
+      "type": "",
+      "flow": "Inbound",
+      "status": "Ok"
     }
   ]
 }
