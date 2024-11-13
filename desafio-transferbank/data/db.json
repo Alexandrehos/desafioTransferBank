@@ -1,0 +1,82 @@
+{
+  "clients": [
+    {
+      "nome": "Severino Carlos Barros",
+      "cpf": "22296739121",
+      "email": "severino-barros78@fundamentos.com.br",
+      "celular": "5521986510635",
+      "id": "a9d7"
+    },
+    {
+      "nome": "Giovana Manuela da Costa",
+      "cpf": "54372248261",
+      "email": "giovana.manuela.dacosta@unicamp.br",
+      "celular": "5596991903305",
+      "id": "3547"
+    },
+    {
+      "nome": "Isadora Eliane Freitas",
+      "cpf": "73882878762",
+      "email": "isadora_eliane_freitas@decorsul.com",
+      "celular": "5567992657111",
+      "id": "929b"
+    },
+    {
+      "nome": "Eloá Clara Rezende",
+      "cpf": "96229568314",
+      "email": "eloa.clara.rezende@agen-pegeuot.com.br",
+      "celular": "5592986637379",
+      "id": "42e4"
+    },
+    {
+      "nome": "Mirella Catarina dos Santos",
+      "cpf": "90298112930",
+      "email": "mirellacatarinadossantos@avantii.com.br",
+      "celular": "5596983373918",
+      "id": "56f0"
+    }
+  ],
+  "accountTransactions": [
+    {
+      "value": 1000,
+      "transactionFlow": "valueIn",
+      "status": "Ok",
+      "transactionType": "Pix",
+      "id": "9fc7"
+    },
+    {
+      "value": 2500,
+      "transactionFlow": "valueIn",
+      "status": "Ok",
+      "transactionType": "Pix",
+      "id": "cdb3"
+    },
+    {
+      "value": 1000,
+      "transactionFlow": "valueIn",
+      "status": "Canceled",
+      "transactionType": "Pix",
+      "id": "2336"
+    },
+    {
+      "id": "8109",
+      "clientName": "Alan da Silva Golçalves",
+      "clientCPF": "08182227941",
+      "clientPhone": "5541995988760",
+      "dolarValue": "5.7490",
+      "dolarVETValue": 5.8110892,
+      "finalOrderValue": "1",
+      "finalOrderValueClient": 63.92198119999999
+    },
+    {
+      "id": "0619",
+      "clientName": "Alan da Silva Golçalves",
+      "clientCPF": "08182227941",
+      "clientPhone": "5541995988760",
+      "dolarValue": "5.7490",
+      "dolarVETValue": 5.8110892,
+      "finalOrderValue": "15",
+      "finalOrderValueClient": 145.27722999999997
+    }
+  ]
+}

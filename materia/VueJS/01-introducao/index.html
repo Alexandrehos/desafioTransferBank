@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Aqui estamos usando a CDN no vue para fazer nosso primeiro componente -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      body {
+        background: #eee;
+        max-width: 960px;
+        margin: 20px auto;
+      }
+      p,
+      h3,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style-type: none;
+        background: #fff;
+        margin: 20px auto;
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      li.fav {
+        background: #ff9ed2;
+        color: white;
+      }
+      li.fav2 {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div v-if="showBook">
+        <ul>
+          <li>Titulo do livro: {{title}}</li>
+          <li>Nome do autor: {{author}}</li>
+          <li>Idade do autor: {{age}}</li>
+        </ul>
+      </div>
+      <button v-on:click="age++">Aumentar idade</button>
+      <button @click="age--">Diminuir idade</button>
+      <button @click="mudarTitulo('Words of Randiance')">Mudar livro</button>
+      <button @click="toggleShowBooks">
+        <span v-if="showBook">Exibir livro</span>
+        <span v-else>Esconder livro</span>
+      </button>
+      <button @click="showBook=!showBook">Exibir/esconder livro</button>
+      <div v-show="showBook">O livro esta sendo exibido</div>
+
+      <br />
+      <hr />
+      <br />
+
+      <h2>Eventos do mouse</h2>
+      <!-- Como a gente quer acessar o objeto event e também outro parâmetro para a função, a gente usa esse $event para avisar ao vue que queremos que o primeiro argumento seja o objeto de evento -->
+      <div class="box" @mouseover="handleEvent($event, 5)">
+        mouseover (enter)
+      </div>
+      <div class="box" @mouseleave="handleEvent">mouseleave</div>
+      <div class="box" @dblclick="handleEvent">double click me</div>
+      <div class="box" @mousemove="handleMousemove">
+        position {{ x }} {{ y }}
+      </div>
+
+      <br />
+      <hr />
+      <br />
+
+      <h2>Iterando sobre uma lista</h2>
+
+      <div v-for="book in books">
+        <ul>
+          <li>Titulo do livro: {{book.title}}</li>
+          <li>Nome do autor: {{book.author}}</li>
+        </ul>
+      </div>
+
+      <br />
+      <hr />
+      <br />
+
+      <h2>Iterando sobre uma lista</h2>
+
+      <div>
+        <ul>
+          <li
+            v-for="book in books2"
+            :class="{ fav: book.isFav }"
+            @click="book.isFav = !book.isFav"
+          >
+            <img v-bind:src="book.img" :alt="book.title" />
+            <h3>{{ book.title }}</h3>
+            <p>{{ book.author }}</p>
+          </li>
+        </ul>
+      </div>
+
+      <h2>Lista de livros favoritos</h2>
+
+      <div>
+        <ul>
+          <li
+            v-for="book in favoriteBooks"
+            :class="{ fav: book.isFav }"
+            @click="book.isFav = !book.isFav"
+          >
+            <img v-bind:src="book.img" :alt="book.title" />
+            <h3>{{ book.title }}</h3>
+            <p>{{ book.author }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
